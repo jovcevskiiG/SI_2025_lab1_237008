@@ -17,6 +17,10 @@ class Task {
         this.isCompleted = false;
     }
 
+    public void removeTaskByName(String taskName) {
+        tasks.removeIf(task -> task.getName().equalsIgnoreCase(taskName));
+    }
+
     public void complete() {
         this.isCompleted = true;
     }

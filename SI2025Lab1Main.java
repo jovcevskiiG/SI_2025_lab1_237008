@@ -54,6 +54,16 @@ class TaskManager {
         this.tasks = new ArrayList<>();
     }
 
+    public List<Task> findAllCompletedTasks() {
+        List<Task> completedTasks = new ArrayList<>();
+        for (Task task : tasks) {
+            if (task.isCompleted()) {
+                completedTasks.add(task);
+            }
+        }
+        return completedTasks;
+    }
+
     public void addTask(String name, Priority priority, String category) {
         tasks.add(new Task(name, priority, category));
     }
